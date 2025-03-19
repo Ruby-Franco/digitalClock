@@ -12,12 +12,16 @@ export default function DigitalClock() {
       clearInterval(updateTime);
     }; 
   }, []);
+
+  if (currentTime === null) {
+    return <div>Loading...</div>;
+  }
+
   
   return (
-    
-    <div>
-     Digital Clock <br />
-     this is completion of step two and three : {currentTime}
+    <div className=" items-center min-h-screen bg-gray-800 text-white"> 
+      <header className="font-bold text-4xl mb-4"> Digital Clock </header> 
+      <p className="text-6xl">{currentTime} </p>
     </div>
   );
 }
