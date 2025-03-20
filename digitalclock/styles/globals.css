@@ -2,20 +2,71 @@
 @tailwind components; 
 @tailwind utilities; 
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+body {
+  background-color: #5e6e87; /* Set a color for the body */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.ambient-wall {
+  background-color: #3e4771;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15)30%, transparent 10%),
+  radial-gradient(rgba(255, 255, 255, 0.002) 100%, transparent 100%);
+  background-size: 10px 10px, 5px, 5px;
+}
+
+.fairy-lights-container {
+  position: relative; 
+}
+
+.fairy-lights {
+  position: absolute; 
+  top: 10;
+  left: 10;
+  width: 100%;
+  height: 100%;
+}
+
+.fairy-light {
+  position: absolute; 
+  width: 10px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #e7cf6f;
+  animation: twinkle 1.5s infinite alternate;
+}
+
+@keyframes twinkle {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  }
+
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1.5);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.clock-container {
+  background-color: black;
+  padding: '500px';
+  border-radius: '500px';
+  text-align: center;
+  margin: auto;
+}
+
+.clock-display {
+  position: absolute; 
+  top: 75%; 
+  left: 70%; 
+  transform: translate(-50%, -50%);
+  font-family: 'Press Start 2P', sans-serif;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; 
+  animation: shake 1s ease infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); } 
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
 }
