@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { ReactComponent as Poster } from '../public/poster.svg';
 
 export default function DigitalClock() {
 
@@ -20,25 +21,32 @@ export default function DigitalClock() {
   
   return (
     <div className=" fairy-lights-container items-center min-h-screen text-white ambient-wall "> 
-      <div className="fairy-lights">
-        {Array.from({ length: 10 }).map((_, index) => (
-          <div
-            key={index}
-            className="fairy-light"
-            style={{
-              left: `${index * 10}%`, //`${xPos}%`,//
-              top: `${index^2 + 7}%`,//`${yPos}px`, 
-              animationDelay: `${index * 0.2}s`,
-            }}
-          />
-          ))}
+      <div className="fairy-lights"> 
+      {Array.from({ length: 10 }).map((_, index) => (
+        <div
+          key={index}
+          className="fairy-light"
+          style={{
+            left: `${index * 10}%`, //`${xPos}%`,//
+            top: `${index^2 + 7}%`,//`${yPos}px`, 
+            animationDelay: `${index * 0.2}s`,
+          }}
+        /> ))}
       </div>
 
+      <div className="scott-pilgram-sign"> 
+        <h1> Scott Pilgram</h1>  
+     </div>
 
-      <div className="clock-container">
-        <p className="clock-display text-2xl ">{currentTime} </p>
-      </div>
+      <img src="/poster.svg" className="poster" />
+
+      <img src="/coloredPoster.svg" className="colorPoster" />
       
+      <img src="/bandPic.svg" className="bandPic" />
+      
+      <div> 
+        <p className="clock-container clock-display text-2xl ">{currentTime} </p>
+      </div>
       
     </div>
   );
