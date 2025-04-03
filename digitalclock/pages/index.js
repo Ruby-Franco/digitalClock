@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { ReactComponent as Poster } from '../public/poster.svg';
+import Poster  from '../public/poster.svg';
 
 export default function DigitalClock() {
 
